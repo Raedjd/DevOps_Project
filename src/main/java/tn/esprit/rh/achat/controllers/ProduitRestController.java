@@ -19,8 +19,7 @@ public class ProduitRestController {
 	IProduitService produitService;
 
 	// http://localhost:8089/SpringMVC/produit/retrieve-all-produits
-	// @GetMapping("/retrieve-all-produits") This vulnerability by SonarQube
-	@RequestMapping(path = "/retrieve-all-produits", method = RequestMethod.GET)
+	@GetMapping("/retrieve-all-produits")
 	@ResponseBody
 	public List<Produit> getProduits() {
 	 return  produitService.retrieveAllProduits();
@@ -28,8 +27,7 @@ public class ProduitRestController {
 	}
 
 	// http://localhost:8089/SpringMVC/produit/retrieve-produit/8
-	//@GetMapping("/retrieve-produit/{produit-id}")
-	@RequestMapping(path = "/retrieve-produit/{produit-id}", method = RequestMethod.GET)
+	@GetMapping("/retrieve-produit/{produit-id}")
 	@ResponseBody
 	public Produit retrieveRayon(@PathVariable("produit-id") Long produitId) {
 		return produitService.retrieveProduit(produitId);
@@ -37,8 +35,7 @@ public class ProduitRestController {
 
 	/* Ajouter en produit tout en lui affectant la catégorie produit et le stock associés */
 	// http://localhost:8089/SpringMVC/produit/add-produit/{idCategorieProduit}/{idStock}
-	//@PostMapping("/add-produit")
-	@RequestMapping(path = "/add-produit", method = RequestMethod.POST)
+	@PostMapping("/add-produit")
 	@ResponseBody
 	public Produit addProduit(@RequestBody Produit produit) {
 		return produitService.addProduit(produit);
@@ -46,16 +43,14 @@ public class ProduitRestController {
 	}
 
 	// http://localhost:8089/SpringMVC/produit/remove-produit/{produit-id}
-	//@DeleteMapping("/remove-produit/{produit-id}")
-	@RequestMapping(path = "/remove-produit/{produit-id}", method = RequestMethod.DELETE)
+	@DeleteMapping("/remove-produit/{produit-id}")
 	@ResponseBody
 	public void removeProduit(@PathVariable("produit-id") Long produitId) {
 		produitService.deleteProduit(produitId);
 	}
 
 	// http://localhost:8089/SpringMVC/produit/modify-produit/{idCategorieProduit}/{idStock}
-	//@PutMapping("/modify-produit")
-	@RequestMapping(path = "/modify-produit", method = RequestMethod.PUT)
+	@PutMapping("/modify-produit")
 	@ResponseBody
 	public Produit modifyProduit(@RequestBody Produit produit) {
 		return produitService.updateProduit(produit);
@@ -63,8 +58,7 @@ public class ProduitRestController {
 
 
 	// http://localhost:8089/SpringMVC/produit/assignProduitToStock/1/5
-	//@PutMapping(value = "/assignProduitToStock/{idProduit}/{idStock}")
-	@RequestMapping(path = "/assignProduitToStock/{idProduit}/{idStock}", method = RequestMethod.PUT)
+	@PutMapping(value = "/assignProduitToStock/{idProduit}/{idStock}")
 	public void assignProduitToStock(@PathVariable("idProduit") Long idProduit, @PathVariable("idStock") Long idStock) {
 		produitService.assignProduitToStock(idProduit, idStock);
 	}
