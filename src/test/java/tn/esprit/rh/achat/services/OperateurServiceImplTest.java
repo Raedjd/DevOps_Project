@@ -40,18 +40,18 @@ class OperateurServiceImplTest {
         operateur.setFactures(new HashSet<>());
         operateur.setIdOperateur(1L);
         operateur.setNom("Nom");
-        operateur.setPassword("iloveyou");
+        operateur.setPassword("azerty");
         operateur.setPrenom("Prenom");
-        when(operateurRepository.save((Operateur) any())).thenReturn(operateur);
+        when(operateurRepository.save(any())).thenReturn(operateur);
 
         Operateur operateur1 = new Operateur();
         operateur1.setFactures(new HashSet<>());
         operateur1.setIdOperateur(1L);
         operateur1.setNom("Nom");
-        operateur1.setPassword("iloveyou");
+        operateur1.setPassword("1234");
         operateur1.setPrenom("Prenom");
         assertSame(operateur1, operateurServiceImpl.addOperateur(operateur1));
-        verify(operateurRepository).save((Operateur) any());
+        verify(operateurRepository).save(any());
     }
 
 
@@ -69,7 +69,7 @@ class OperateurServiceImplTest {
         operateur.setFactures(new HashSet<>());
         operateur.setIdOperateur(1L);
         operateur.setNom("Nom");
-        operateur.setPassword("iloveyou");
+        operateur.setPassword("1234");
         operateur.setPrenom("Prenom");
         when(operateurRepository.save((Operateur) any())).thenReturn(operateur);
 
@@ -77,7 +77,7 @@ class OperateurServiceImplTest {
         operateur1.setFactures(new HashSet<>());
         operateur1.setIdOperateur(1L);
         operateur1.setNom("Nom");
-        operateur1.setPassword("iloveyou");
+        operateur1.setPassword("12345");
         operateur1.setPrenom("Prenom");
         assertSame(operateur1, operateurServiceImpl.updateOperateur(operateur1));
         verify(operateurRepository).save((Operateur) any());
@@ -90,7 +90,7 @@ class OperateurServiceImplTest {
         operateur.setFactures(new HashSet<>());
         operateur.setIdOperateur(1L);
         operateur.setNom("Nom");
-        operateur.setPassword("iloveyou");
+        operateur.setPassword("azerty");
         operateur.setPrenom("Prenom");
         Optional<Operateur> ofResult = Optional.of(operateur);
         when(operateurRepository.findById((Long) any())).thenReturn(ofResult);
