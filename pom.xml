@@ -66,9 +66,17 @@
 			<artifactId>mockito-junit-jupiter</artifactId>
 		</dependency>
 
+
 	</dependencies>
+	<distributionManagement>
+		<snapshotRepository>
+			<id>nexus-releases</id>
+			<url>http://192.168.108.222:8081/repository/maven-releases/</url>
+		</snapshotRepository>
+	</distributionManagement>
 
 	<build>
+
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
