@@ -11,7 +11,7 @@ services:
 
     volumes:
       - /home/mysql/data:/var/lib/mysql
-  Raed:
+  raed:
     build: ./
     container_name: spring
     ports:
