@@ -1,23 +1,20 @@
-version: '2.2'
+version: '3.8'
 services:
-  database:
-    image: mysql
-    container_name: mysql
+  mysqldb:
+    image: mysql:5.7
+    restart: unless-stopped
     environment:
       MYSQL_DATABASE: achatdb
       MYSQL_USER: raed
       MYSQL_PASSWORD: raedjd
-
     ports:
       - 3306:3306
-
-    volumes:
-      - /home/mysql/data:/var/lib/mysql
+   volumes:
+      - db:/var/lib/mysql
   spring-boot:
     build: ./
-    container_name: spring
+    restart: on-failure
     ports:
       - 8089:8089
     depends_on:
-      - database
-    restart: on-failure
+      - mysqldb
