@@ -1,7 +1,7 @@
-version: '3'
+version: '2.2'
 services:
   database:
-    image: mysql:5.7.8
+    image: mysql:8
     container_name: mysqldb1
     environment:
       MYSQL_DATABASE: achatdb
