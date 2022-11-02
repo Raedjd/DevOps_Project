@@ -9,8 +9,7 @@ services:
       MYSQL_PASSWORD: raedjd
     ports:
       - 3306:3306
-    volumes:
-      - db:/var/lib/mysql
+
   app:
     build: ./
     restart: on-failure
