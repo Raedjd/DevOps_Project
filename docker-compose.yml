@@ -7,7 +7,7 @@ services:
       MYSQL_DATABASE: achatdb
       MYSQL_USER: raed
       MYSQL_PASSWORD: raedjd
-      MYSQL_ROOT_PASSWORD: raedjd
+
     ports:
       - 3306:3306
 
