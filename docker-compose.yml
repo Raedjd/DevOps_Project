@@ -1,8 +1,8 @@
 version: '2.2'
 services:
   database:
-    image: mysql:5.7
-    container_name: mysqldb1
+    image: mysql
+    container_name: mysqld
     environment:
       MYSQL_DATABASE: achatdb
       MYSQL_USER: raed
