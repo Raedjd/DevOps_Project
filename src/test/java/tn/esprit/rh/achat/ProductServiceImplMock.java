@@ -1,4 +1,4 @@
-package tn.esprit.rh.achat;
+/*package tn.esprit.rh.achat;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -27,20 +27,36 @@ public class ProductServiceImplMock {
     @InjectMocks
     ProduitServiceImpl produitServiceImpl;
 
-    Produit produit = new Produit("p1", "pc" , 12 ,new Date() );
-
-    List<Produit> listUsers = new ArrayList<Produit>() {
+    Produit produit = new Produit("raed1", "pc" , 12 ,new Date() );
+    Produit produit1 = new Produit("raed2", "game" , 90 ,new Date() );
+    Produit produit2 = new Produit("raed3", "phone" , 15 ,new Date() );
+    List<Produit> list = new ArrayList<Produit>() {
         {
-            add(new Produit("p2", "phone", 13,  new Date()));
-            add(new Produit("p3", "game", 14 , new Date()));
+            add(produit1);
+            add(produit2);
         }
     };
+
+
+
     @Test
-    public void testRetrieveProduit() {
+    void testRetrieveProduit() {
         Mockito.when(produitRepository.findById(Mockito.anyLong())).thenReturn(Optional.of(produit));
         Produit prod1 = produitServiceImpl.retrieveProduit(1L);
         Assertions.assertNotNull(prod1);
     }
 
 
+    @Test
+    void updateProduitTest(){
+        produit.setLibelleProduit("Libelle 1 updated");
+        Assertions.assertNotNull(produitServiceImpl.updateProduit(produit));
+    }
+    @Test
+    void deleteProduitTest(){
+        produitServiceImpl.deleteProduit(
+                produit2.getIdProduit());
+        Assertions.assertNotNull(list);
+    }
 }
+*/
