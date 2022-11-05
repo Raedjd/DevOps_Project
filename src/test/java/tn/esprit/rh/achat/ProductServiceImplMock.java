@@ -1,4 +1,4 @@
-/*package tn.esprit.rh.achat;
+package tn.esprit.rh.achat;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -58,4 +58,3 @@ public class ProductServiceImplMock {
         Assertions.assertNotNull(list);
     }
 }
-*/
