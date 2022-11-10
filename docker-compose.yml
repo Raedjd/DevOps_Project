@@ -7,7 +7,7 @@ services:
     ports:
       - 3306:3306
     environment:
-      - MYSQL_ROOT_PASSWORD=dhia
+      - MYSQL_ROOT_PASSWORD=dhia1234
       - MYSQL_DATABASE=facturedb
       - MYSQL_USER=dhia
       - MYSQL_PASSWORD=dhia
