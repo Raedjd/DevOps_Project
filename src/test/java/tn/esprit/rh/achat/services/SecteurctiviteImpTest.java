@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @SpringBootTest
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 public class SecteurctiviteImpTest {
-   /* @Autowired
+    @Autowired
     private  ISecteurActiviteService secteurActiviteService;
     @Test
     @Order(1)
@@ -36,6 +36,6 @@ public class SecteurctiviteImpTest {
     }
     @Test
     void TestretrieveStock() {
-        secteurActiviteService.retrieveSecteurActivite(0L);
-    }*/
+        secteurActiviteService.retrieveSecteurActivite(1L);
+    }
 }
