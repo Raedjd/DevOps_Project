@@ -7,10 +7,10 @@ services:
     ports:
       - 3306:3306
     environment:
-      - MYSQL_ROOT_PASSWORD=raedjd
+      - MYSQL_ROOT_PASSWORD=root
       - MYSQL_DATABASE=achatdb
-      - MYSQL_USER=raed
-      - MYSQL_PASSWORD=raedjd
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=root
     volumes:
       - achatdb:/var/lib/mysql
 
