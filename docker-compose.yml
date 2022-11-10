@@ -14,7 +14,7 @@ services:
     volumes:
       - facturedb:/var/lib/mysql
 
-  product_app:
+  facture_app:
     build: ./
     container_name: facture-service
     restart: on-failure
