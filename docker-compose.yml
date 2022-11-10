@@ -17,11 +17,7 @@ services:
   facture_app:
     build: ./
     container_name: facture-services
-    restart: on-failure
-    environment:
-      - spring.datasource.url=jdbc:mysql://localhost:3306/facturedb?createDatabaseIfNotExist=true&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
-      - spring.datasource.username=root
-      - spring.datasource.password=dhia1234      
+    restart: on-failure 
     ports:
       - 8089:8089
     depends_on:
