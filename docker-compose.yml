@@ -16,7 +16,7 @@ services:
 
   facture_app:
     build: ./
-    container_name: facture-service
+    container_name: facture-services
     restart: on-failure
     environment:
       - spring.datasource.url=jdbc:mysql://mysqldb:3306/facturedb?createDatabaseIfNotExist=true&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
