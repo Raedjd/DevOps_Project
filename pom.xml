@@ -16,6 +16,10 @@
     <properties>
         <java.version>1.8</java.version>
         <maven-jar-plugin.version>3.1.0</maven-jar-plugin.version>
+        <sonar.login>admin</sonar.login>
+        <sonar.password>sonar</sonar.password>
+        <sonar.host.url>http://localhost:9000</sonar.host.url>
+
     </properties>
     <dependencies>
         <dependency>

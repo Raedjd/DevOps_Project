@@ -1,0 +1,28 @@
+version: "2.2"
+services:
+  mysqldb:
+    container_name: achatdb
+    image: mysql/mysql-server:8.0
+    restart: unless-stopped
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=lotfibr
+      - MYSQL_DATABASE=achatdb
+      - MYSQL_USER=lotfi
+      - MYSQL_PASSWORD=lotfibr
+    volumes:
+      - achatdb:/var/lib/mysql
+
+  product_app:
+    build: ./
+    container_name: achatbackend
+    restart: on-failure
+    environment:
+      - spring.datasource.url=jdbc:mysql://localhost:3306/achatdb?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true&useSSL=false&allowPublicKeyRetrieval=true
+    ports:
+      - "8089:8089"
+    depends_on:
+      - mysqldb
+volumes:
+  achatdb:
