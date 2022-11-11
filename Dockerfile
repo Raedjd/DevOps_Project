@@ -1,4 +1,4 @@
 FROM openjdk:8
 ADD target/achat-1.0.jar fournisseur.jar
-EXPOSE 8001
+EXPOSE 8089
 ENTRYPOINT ["java", "-jar", "fournisseur.jar"]
