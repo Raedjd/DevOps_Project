@@ -4,7 +4,7 @@ services:
     image: mysql/mysql-server:8.0
     restart: unless-stopped
     ports:
-      - 3308:3308
+      - 3307:3307
     environment:
       - MYSQL_ROOT_PASSWORD=0000
       - MYSQL_DATABASE= achatdb
@@ -17,9 +17,9 @@ services:
     build: ./
     restart: on-failure
     environment:
-      - spring.datasource.url=jdbc:mysql://mysqldb:3308/achatdb?createDatabaseIfNotExist=true&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+      - spring.datasource.url=jdbc:mysql://mysqldb:3307/achatdb?createDatabaseIfNotExist=true&useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
     ports:
-      - 8089:8089
+      - 8084:8084
     depends_on:
       - mysqldb
 
