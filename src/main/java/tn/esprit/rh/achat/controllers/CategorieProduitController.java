@@ -16,21 +16,18 @@ public class CategorieProduitController {
 	@Autowired
 	ICategorieProduitService categorieProduitService;
 	
-	// http://localhost:8089/SpringMVC/categorieProduit/retrieve-all-categorieProduit
 	@GetMapping("/retrieve-all-categorieProduit")
 	@ResponseBody
 	public List<CategorieProduit> getCategorieProduit() {
 		return categorieProduitService.retrieveAllCategorieProduits();
 	}
 
-	// http://localhost:8089/SpringMVC/categorieProduit/retrieve-categorieProduit/8
 	@GetMapping("/retrieve-categorieProduit/{categorieProduit-id}")
 	@ResponseBody
 	public CategorieProduit retrieveCategorieProduit(@PathVariable("categorieProduit-id") Long categorieProduitId) {
 		return categorieProduitService.retrieveCategorieProduit(categorieProduitId);
 	}
 
-	// http://localhost:8089/SpringMVC/categorieProduit/add-categorieProduit
 	@PostMapping("/add-categorieProduit")
 	@ResponseBody
 	public CategorieProduit addCategorieProduit(@RequestBody CategorieProduit cp) {
@@ -43,7 +40,6 @@ public class CategorieProduitController {
 		categorieProduitService.deleteCategorieProduit(categorieProduitId);
 	}
 
-	// http://localhost:8089/SpringMVC/categorieProduit/modify-categorieProduit
 	@PutMapping("/modify-categorieProduit")
 	@ResponseBody
 	public CategorieProduit modifyCategorieProduit(@RequestBody CategorieProduit categorieProduit) {
