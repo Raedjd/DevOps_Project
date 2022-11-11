@@ -22,7 +22,7 @@ public class StockServiceImpl implements IStockService {
 	public List<Stock> retrieveAllStocks() {
 		// récuperer la date à l'instant t1
 		log.info("In method retrieveAllStocks");
-		List<Stock> stocks = (List<Stock>) stockRepository.findAll();
+		List<Stock> stocks = stockRepository.findAll();
 		for (Stock stock : stocks) {
 			log.info(" Stock : " + stock);
 		}
@@ -72,7 +72,7 @@ public class StockServiceImpl implements IStockService {
 		String msgDate = sdf.format(now);
 		StringBuilder finalMessage = new StringBuilder();
 		String newLine = System.getProperty("line.separator");
-		List<Stock> stocksEnRouge = (List<Stock>) stockRepository.retrieveStatusStock();
+		List<Stock> stocksEnRouge = stockRepository.retrieveStatusStock();
 		for (Stock stock : stocksEnRouge) {
 			finalMessage = new StringBuilder(newLine + finalMessage + msgDate + newLine + ": le stock "
 					+ stock.getLibelleStock() + " a une quantité de " + stock.getQte()
