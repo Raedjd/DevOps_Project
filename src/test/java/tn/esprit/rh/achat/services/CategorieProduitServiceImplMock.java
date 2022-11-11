@@ -48,5 +48,11 @@ public class CategorieProduitServiceImplMock {
         Assertions.assertNotNull(CP1);
     }
 
+    @Test
+    void testdeleteCategorieProduit(){
+        categorieProduitService.deleteCategorieProduit(categorieProduit4.getIdCategorieProduit());
+        Assertions.assertNotNull(listCP);
+    }
+
 
 }
